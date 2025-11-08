@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+# Project-specific executables
+poisson
+likelihood
+
+# Generated output files
+hist.txt
+histpoi.txt
+likelihood.txt
+nll.txt
+deltanll.txt
+*.svg
