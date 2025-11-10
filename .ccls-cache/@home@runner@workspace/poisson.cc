@@ -1,42 +1,11 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-
-double poisson(double mu, int k) {
-    return 0;
-}
+double poisson(double mu, int k) { return 0; }
 
 int main() {
-    vector<int> zaehler(11, 0);
-
-    ifstream infile("datensumme.txt");
-    if (!infile.is_open()) {
-        cerr << "Error: Could not open file datensumme.txt" << endl;
-        return 1;
-    }
-
-    int zahl;
-    int N = 0;
-
-    while (infile >> zahl) {
-        if (zahl >= 0 && zahl <= 10) {
-            zaehler[zahl] += 1;
-            N++;
-        }
-    }
-
-    infile.close();
-
-    cout << "Read " << N << " values." << endl;
-    cout << "Frequencies:" << endl;
-
-    for (unsigned int k = 0; k < zaehler.size(); ++k) {
-        cout << k << ": " << zaehler[k] << endl;
-    }
-
-    cout << "hallo";
-    return 0;
+  cout << "hallo";
 }
