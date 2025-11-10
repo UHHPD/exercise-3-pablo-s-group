@@ -21,9 +21,9 @@ args = "compile"
 name = "compile"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "make all && echo \"Compilation successful! Programs 'poisson' and 'likelihood' are ready to run.\""
-
 [workflows.workflow.metadata]
 outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "make all && echo \"=== Running poisson ===\" && ./poisson"
