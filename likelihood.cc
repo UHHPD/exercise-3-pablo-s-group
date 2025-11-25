@@ -68,5 +68,28 @@ int main() {
   }
   fout_deltanll.close();
 
+  // Exercise 1e
+  double mu_hat = 3.11538;
+
+  double L_model = prob(daten, mu_hat); 
+
+  double L_sat = 1.0;
+  for (int k : daten) {
+    L_sat *= poisson(k, k);
+  }
+
+  double lambda = L_model / L_sat;
+  double minus2logLambda = -2.0 * log(lambda);
+
+  cout << "-2 ln Lambda = " << minus2logLambda << endl;
+
+  int ndof = daten.size() - 1;
+  double mean = ndof;
+  double sigma = sqrt(2.0 * ndof);
+
+  double z = (minus2logLambda - mean) / sigma;
+
+  cout << "z = " << z << endl;
+
   return 0;
 }
