@@ -30,7 +30,7 @@ int main() {
   double mu = 3.11538; // sample mean
   double L = prob(daten, mu);
 
-  cout << "Likelihood L(mu) = " << L << endl;
+  cout << L << endl;
 
   return 0;
 }
