@@ -36,7 +36,6 @@ poisson
 likelihood
 
 # Generated output files
-likelihood.txt
 nll.txt
 deltanll.txt
 *.svg
