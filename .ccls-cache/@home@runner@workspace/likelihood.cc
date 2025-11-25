@@ -27,11 +27,13 @@ int main() {
   }
   fin.close();
 
+  // Exercise 1a
   double mu = 3.11538; // sample mean
   double L = prob(daten, mu);
 
   cout << L << endl;
 
+  // Exercise 1b
   ofstream fout("likelihood.txt");
   for (double mu = 0.0; mu <= 6.0; mu += 0.1) {
     double L = prob(daten, mu);
@@ -40,6 +42,7 @@ int main() {
 
   fout.close();
 
+  // Exercise 1c
   ofstream fout_nll("nll.txt");
   for (double mu = 0.0; mu <= 6.0; mu += 0.1) {
     double L = prob(daten, mu);
@@ -50,6 +53,20 @@ int main() {
   }
 
   fout_nll.close();
+
+  // Exercise 1d
+  double Lhat = prob(daten, 3.11538);
+  double nll_hat = -2.0 * log(Lhat);
+
+  ofstream fout_deltanll("deltanll.txt");
+  for (double mu = 0.0; mu <= 6.0; mu += 0.1) {
+    double L = prob(daten, mu);
+    double nll = -2.0 * log(L);
+
+    double deltanll = nll - nll_hat;
+    fout_deltanll << mu << " " << deltanll << "\n";
+  }
+  fout_deltanll.close();
 
   return 0;
 }
