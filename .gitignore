@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Project-specific executables
+poisson
+likelihood
+
+# Generated output files
+*.svg
