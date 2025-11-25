@@ -26,4 +26,4 @@ outputType = "console"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "make all && echo \"=== Running poisson ===\" && ./poisson"
+args = "make all && echo \"=== Running likelihood ===\" && ./likelihood"
