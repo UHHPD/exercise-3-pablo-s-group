@@ -33,13 +33,23 @@ int main() {
   cout << L << endl;
 
   ofstream fout("likelihood.txt");
-
   for (double mu = 0.0; mu <= 6.0; mu += 0.1) {
     double L = prob(daten, mu);
     fout << mu << " " << L << "\n";
   }
 
   fout.close();
+
+  ofstream fout_nll("nll.txt");
+  for (double mu = 0.0; mu <= 6.0; mu += 0.1) {
+    double L = prob(daten, mu);
+
+    double nll = -2.0 * log(L);
+
+    fout_nll << mu << " " << nll << "\n";
+  }
+
+  fout_nll.close();
 
   return 0;
 }
